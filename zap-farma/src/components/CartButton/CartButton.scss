@@ -1,11 +1,13 @@
-button {
+.cart-btt {
+  cursor: pointer;
   width: 105px;
   height: 56px;
   position: fixed;
-  right: -35px;
+  right: -30px;
   bottom: 100px;
   background: radial-gradient(56.86% 70.54% at 50.24% 29.46%, #047A8F 11.46%, rgba(255, 255, 255, 0) 100%), #013E68;
   box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.28);
+  border: none;
   border-radius: 28px;
 
   img {

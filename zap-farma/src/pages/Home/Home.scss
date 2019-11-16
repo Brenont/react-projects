@@ -1,4 +1,4 @@
-@import "./mixin.scss";
+@import "../../mixin.scss";
 
 
 .banner {
@@ -53,6 +53,7 @@
 
 .cards-container {  
   @include flex(flex-start, flex-start, row);
+  width: 100%;
   overflow-x: scroll;
   overflow-y: auto;
 
@@ -93,5 +94,14 @@
     .balloon-price {
       display: none;
     }
+  }
+
+  .cards-container {  
+    justify-content: center;
+  }
+
+  .section-title {
+    text-align: center;
+    font-size: 22px;
   }
 }

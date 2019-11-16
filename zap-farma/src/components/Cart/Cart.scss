@@ -1,0 +1,87 @@
+@import "../../mixin.scss";
+
+.modal-container {
+  min-height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.726);
+  z-index: 10;
+  @include flex(center, center, column);
+
+  .modal-content {
+    max-height: 90vh;
+    overflow-y: scroll;
+    overflow-x: auto;
+    min-width: 290px;
+    max-width: 90vw;
+    background: #F9F9F9;
+    @include flex(center, center, column);
+
+    header {
+      width: 100%;
+      padding: 20px 0;
+      @include flex(space-around, center, row);
+
+      h3 {
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      img {
+        cursor: pointer;
+      }
+    }
+
+    footer {
+      @include flex(space-around, center, row);
+      width: 100%;
+      box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.12);
+      padding: 10px 0;
+    }
+  }
+}
+
+.cart-item {
+  margin: 0 20px 10px;
+  padding: 15px 0 20px;
+  border-bottom: 2px solid #E8E8E8;
+  @include flex(center, center, row);
+
+  & div {
+    @include flex(center, center, column);
+
+    .delete-item {
+      width: 115px;
+      height: 30px;
+      border: 1px solid #E8E8E8;
+      background-color: #fff;
+      box-sizing: border-box;
+      color: #8B8787;
+      margin-top: 10px;
+      cursor: pointer;
+      text-align: center;
+      font-weight: bold;
+      @include flex(center, center, initial);
+ 
+      
+      img {
+        width: 11px;
+        height: auto;
+        margin-left: 5px;
+      }
+
+    }
+  }
+
+  & div:nth-child(2) {
+    @include flex(center, flex-end, column);
+    text-align: right;
+    margin-left: 25px;
+  }
+  img {
+    width: 112px;
+    height: 120px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.11);
+  }
+}
