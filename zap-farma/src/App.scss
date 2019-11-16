@@ -1,0 +1,100 @@
+@import "./mixin.scss";
+
+.Header {
+  z-index: 10;
+}
+
+.banner {
+  background: linear-gradient(180deg, #30B7A3 0%, rgba(255, 255, 255, 0) 100%), #013E68;
+  height: 192px;
+  @include flex(space-between, center, row);
+
+  .balloon-price {
+    background: #047A8F;
+    box-shadow: -1px 2px 4px rgba(0, 0, 0, 0.31);
+    width: 64px;
+    height: 40px;
+    @include flex(center, center, column);
+    border-radius: 100%;
+    padding: 4px 6px;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    position: absolute;
+    top: 70px;
+    left: 105px;
+  }
+
+  .banner-text {
+    color: #fff;
+    @include flex(space-around, flex-start, column);
+    height: 100%;
+
+    h1 {
+      font-size: 20px;
+      margin: 10px 0;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    .button-area {
+      margin: 0 40px 10px 0;
+      width: 100%;
+      @include flex(center, center, initial);
+    }
+  }
+}
+
+.section-title {
+  font-size: 18px;
+  color: #141414;
+  font-weight: 400;
+  margin: 20px 16px 10px;
+}
+
+.cards-container {  
+  @include flex(flex-start, flex-start, row);
+  overflow-x: scroll;
+  overflow-y: auto;
+
+
+  /*change the thinkness of the scrollbar here*/
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 5px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,0); 
+    border-radius: 10px;
+    
+  }
+  /*add a shadow to the scrollbar here*/
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0px rgba(0,0,0,0); 
+    border-radius: 10px;
+  }
+  /*this is the little scrolly dealio in the bar*/ 
+  &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #44b1a0;
+    height: 3px;
+    
+    &::before{
+      cursor: grabbing;
+    }
+  }
+  /*nobody needs this little scrollbar corner, I mean really, get rid of it haha*/  
+    &::-webkit-scrollbar-corner {
+      display: none; height: 0px; width: 0px; 
+      } 
+}
+
+@media(min-width:500px){
+  .banner {
+    @include flex(center, center, row);
+
+    .balloon-price {
+      display: none;
+    }
+  }
+}
