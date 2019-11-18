@@ -3,10 +3,8 @@ import "./Header.scss";
 import logo from "../../assets/img/logo.png"
 import Menu from './Menu/Menu';
 
-// import { Container } from './styles';
-
 export default class Header extends Component {
-
+  
   state = {
     menu: false
   }

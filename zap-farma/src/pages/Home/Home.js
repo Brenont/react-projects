@@ -46,7 +46,7 @@ export default class Home extends Component {
       <section className="cards-container">
         {produtos.map(produto => {
           return (
-            <Card data={produto} />
+            <Card key={produto.id.toString()} data={produto} />
           )
         })} 
       </section>
@@ -55,12 +55,10 @@ export default class Home extends Component {
       <section className="cards-container">
         {produtos.map(produto => {
           return (
-            <Card data={produto} />
+            <Card key={produto.id.toString()} data={produto} />
           )
         })}
       </section>
-
-      {/* <button onClick={this.toogleCart} >CART</button> */}
 
       <CartButton action={this.toogleCart} />
       {this.state.cartModal ? (<Cart toogle={this.toogleCart} />): false}
