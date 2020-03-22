@@ -1,21 +1,24 @@
-import React from "react";
+import React, { useContext } from "react";
 import { ModalContainer, ModalContent, Header } from "./ModalStyled";
+import { ModalContext } from '../../containers/Home/Home';
 
-const Modal = ({ closeAction }) => {
+
+const Modal = ({ status }) => {
+  const close = useContext(ModalContext)
 
   return (
-      <ModalContainer >
-        <ModalContent>
-          <Header>
-            <span onClick={() => closeAction()}>X</span>
-          </Header>
-
-          
-        </ModalContent>
-      </ModalContainer>
+    <>
+      {status ? (
+        <ModalContainer>
+          <ModalContent>
+            <Header>
+              <span onClick={() => close()}>X</span>
+            </Header>
+          </ModalContent>
+        </ModalContainer>
+      ) : null}
+    </>
   );
 };
 
 export default Modal;
-
-

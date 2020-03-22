@@ -8,6 +8,6 @@ export const useModal = (initialState)=> {
     setState(!state)
   };
   
-  return [state, setState, handleModal]
+  return [handleModal, state, setState]
   
 };

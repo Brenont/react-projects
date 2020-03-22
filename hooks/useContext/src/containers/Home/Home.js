@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Card } from "../../components/Card";
 import { useModal } from "../../components/Modal/useModal";
 import { Modal } from "../../components/Modal";
@@ -6,13 +6,13 @@ import { Modal } from "../../components/Modal";
 export const ModalContext = React.createContext();
 
 const Home = () => {
-  const [showModal, setShowModal, handleModal] = useModal(false);
+  const [handleModal, showModal] = useModal(false);
 
   return (
     <>
       <ModalContext.Provider value={handleModal}>
           <Card ></Card>
-          {showModal ? <Modal closeAction={handleModal}></Modal> : null}
+          <Modal status={showModal}></Modal>
       </ModalContext.Provider>
     </>
   );

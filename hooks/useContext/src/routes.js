@@ -6,10 +6,10 @@ import {
 } from "./containers";
 
 export default function Routes() {
+  /* PLOP_INJECT_ROUTE Line:13 */
   return (
     <BrowserRouter>
       <Switch>
-        /* PLOP_INJECT_ROUTE */
         <Route exact path="/" component={Home} />
       </Switch>
     </BrowserRouter>
